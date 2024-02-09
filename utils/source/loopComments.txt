@@ -1,0 +1,5 @@
+What an ingenious loop structure!
+I have mastered the technique of iteration!
+↓What an ingenious algorithm!;
+What an elegant implementation!;
+↓Don't worry about the complexity of the code!
