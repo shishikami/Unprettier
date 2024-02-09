@@ -28,6 +28,37 @@ With this tool, you may expect the following:
 ### Notes
 Unprettier **only support js files** currently. The support for other languages will be available in the future (probably)
 
-### Disclaimer
+### Installation
+To install Unprettier, follow these steps:
+1. Make sure you have **Node.js** installed on your machine.
+2. Open a terminal and run the following command:
+   ```shell
+   npm install unprettier
+   ```
+   If you would like to add the package globally, use the code below instead.(You don't have to do this..)
+   ```shell
+   npm install -g unprettier
+   ```
 
+### Usage
+After installing Unprettier, you can format your code use the command showing below.
+```
+unprettier <options> [input] [output]
+```
+
+### Options
+- `-h, --help`: Displays help information.
+- `-f, --force`: Irreversibly overwrite the output file even it exists.
+
+### Example
+- Format a file named temp.js in the current directory:
+  ```
+  unprettier temp.js changed_temp.js
+  ```
+
+### Expectations
+- Support for more languages
+- Batch conversion by folder name
+
+### Disclaimer
 Unprettier is a purely entertaining project. It is highly **unrecommended** to use it in development environment. Using Unprettier on production code may result in frustration, unreadability and decline in code execution efficiency.
