@@ -9,7 +9,7 @@
 **其他语言:[英文](README.md)**
 
 ### 关于Unprettier
-前言：代码美化工具用多了，这次整个代码筹划工具
+前言：代码美化工具用多了，这次整个代码丑化工具
 
 本项目参考了这个项目：([Shittier](https://github.com/rohitdhas/shittier)).
 
@@ -20,6 +20,8 @@
 - 随意的缩进
 - 针对数字的任意进制表示
 - 很多无厘头的评论（采用不同注释格式）
+
+有一说一，可以把转换的代码发给想抄作业的同学（bushi
 
 ### 效果
 ![Before and After](./public/effect.png)
