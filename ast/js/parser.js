@@ -9,10 +9,12 @@ import distortIndentationRandomly from '../../utils/ast/randomIndent.js';
 import useNumberSysRandomly from '../../utils/ast/randomNumberSys.js';
 import generateCommentsRandomly from '../../utils/ast/randomComments.js';
 import { useRandomBoolean } from '../../utils/ast/randomBoolean.js';
-import { randomRange } from '../../utils/ast/randomIndent.js';
 
-// const commentNodeAttr = ['leadingComments','trailingComments'];
-
+/**
+ * transform js code to ast
+ * @param {string} code 
+ * @returns abstruct syntax tree
+ */
 function parse(code){
   const ast = parser.parse(code,{
     sourceType: "unambiguous",
@@ -143,12 +145,25 @@ export function transform(input, {force, output}){
     // TODO may need an alternate
     // retainLines:true,
   });
-  const uglifiedCode = modifiedCode.code.split('\n').map((e)=>{
-    let v = distortIndentationRandomly(e);
-    return v;
-  }).filter((e)=>{
-    return e !== undefined;
-  }).join('\n');
+  let uglifiedCode = modifiedCode.code.split('\n');
+
+  // Test if there exist SheBang
+  if(uglifiedCode.length > 0){
+    const regExp = /^\s*#!/;
+    let firstLine = uglifiedCode[0];
+    let rest = uglifiedCode.slice(1, uglifiedCode.length);
+    if(!regExp.test(firstLine)){
+      firstLine = distortIndentationRandomly(firstLine);
+    }
+    uglifiedCode = [firstLine, ...rest].map((e)=>{
+      let v = distortIndentationRandomly(e);
+      return v;
+    }).filter((e)=>{
+      return e !== undefined;
+    })
+  }
+
+  uglifiedCode = uglifiedCode.join('\n');
 
   let flag = force ? 'w' : 'wx';
   fileWriter(output, uglifiedCode, flag);

@@ -1,29 +1,15 @@
-import yargs from 'yargs';
+import { Command } from 'commander';
+const program = new Command();
 
 export function showCommands(){
-  const argv = yargs(process.argv.slice(2))
-    .command({
-      command: 'uglify <input> <output>',
-      desc: 'Disfigure your code',
-    })
-    .option('force', {
-      alias: 'f',
-      describe: 'Irreversibly overwrite the output file even it exists',
-      type:'boolean'
-    })
-    .demandCommand()
-    .wrap(90)
-    .help()
-    .parse();
+  program
+    .name("uglier")
+    .usage("<input> [output]")
+    .option('-f, --force', 'Irreversibly overwrite the output file even it exists')
 
-  let {
-    _: command,
-    force: force,
-    input,
-    output
-  } = argv
+  program.parse(process.argv);
+  let force = program.opts().force;
+  let [input, output] = program.args;
 
-  command = command.shift();
-
-  return {command, force, input, output}
+  return {force, input, output}
 }

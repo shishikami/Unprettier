@@ -22,16 +22,20 @@ const fetchSourceCode = path =>{
   const extname = getExtname(path);
   if(acceptSuffix.includes(extname)){
     const data = fileReader(path);
-    return data;
+    return {
+      data,
+      suffix: extname
+    }
   }else{
     throw new Error('Unsupported File Type');
   }
 }
 
 const processInputData = argv =>{
-  if(argv.command !== 'uglify'){
-    throw new Error('Wrong command');
-  }
+  // INFO Not exactly what I expected
+  // if(argv.command !== 'uglier'){
+  //   throw new Error('Wrong command');
+  // }
   return fetchSourceCode(argv.input);
 }
 

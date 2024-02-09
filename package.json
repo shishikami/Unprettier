@@ -1,10 +1,18 @@
 {
   "name": "uglier",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A code formatting tool that provides terrible code formatting, aiming to unreadable, incomprehensible and illogical code formatting",
+  "keywords": [
+    "code-formatter",
+    "uglier",
+    "prettier"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "uglier": "index.js"
   },
   "type": "module",
   "author": "shishikami",
@@ -14,6 +22,9 @@
     "@babel/parser": "^7.23.9",
     "@babel/traverse": "^7.23.9",
     "@babel/types": "^7.23.9",
-    "yargs": "^17.7.2"
-  }
+    "commander": "^12.0.0"
+  },
+  "files": [
+    "*.js"
+  ]
 }

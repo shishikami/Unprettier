@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { showCommands } from "./utils/commands.js";
 import { processInputData } from "./utils/fileProcessor.js";
 import { transform } from "./ast/js/parser.js";
@@ -8,7 +10,12 @@ try{
   argv = showCommands();
   // 输入源码
   const input = processInputData(argv);
-  transform(input, argv);
+  // 分类解析
+  switch(input.suffix){
+    case '.js':
+      transform(input.data, argv);
+      break;
+  }
 }catch(e){
   if(e instanceof Error){
     if (e.message.includes('EEXIST')) {
