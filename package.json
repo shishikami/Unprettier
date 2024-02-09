@@ -1,6 +1,6 @@
 {
   "name": "unprettier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A code formatting tool that provides terrible code formatting, aiming to unreadable, incomprehensible and illogical code formatting",
   "keywords": [
     "code-formatter",
@@ -27,7 +27,9 @@
     "commander": "^12.0.0"
   },
   "files": [
-    "*.js"
+    "index.js",
+    "utils",
+    "ast"
   ],
   "repository": {
     "type": "git",

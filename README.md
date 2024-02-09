@@ -22,16 +22,8 @@ With this tool, you may expect the following:
 - Random number system (Binary, Octal and Hexadecimal)
 - Weird comments were randomly added (With different comment type).
 
-<div style="display:flex;text-align:center;justify-content:space-around;align-items: flex-end;">
-  <div style="display:flex;flex-direction:column;margin-right:10px">
-    <img src="./public/before.png"/>
-    <p>Before</p>
-  </div>
-  <div style="display:flex;flex-direction:column;">
-    <img src="./public/after.png"/>
-    <p>After</p>
-  </div>
-</div>
+### Effect
+![Before and After](./public/effect.png)
 
 ### Notes
 Unprettier **only support js files** currently. The support for other languages will be available in the future (probably)
