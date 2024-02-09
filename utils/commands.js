@@ -3,8 +3,8 @@ const program = new Command();
 
 export function showCommands(){
   program
-    .name("uglier")
-    .usage("<input> [output]")
+    .name("unprettier")
+    .usage("<input> <output>")
     .option('-f, --force', 'Irreversibly overwrite the output file even it exists')
 
   program.parse(process.argv);

@@ -1,18 +1,20 @@
 {
-  "name": "uglier",
+  "name": "unprettier",
   "version": "1.0.0",
   "description": "A code formatting tool that provides terrible code formatting, aiming to unreadable, incomprehensible and illogical code formatting",
   "keywords": [
     "code-formatter",
     "uglier",
-    "prettier"
+    "prettier",
+    "format",
+    "formatter"
   ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "uglier": "index.js"
+    "unprettier": "index.js"
   },
   "type": "module",
   "author": "shishikami",
@@ -26,5 +28,10 @@
   },
   "files": [
     "*.js"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shishikami/Unprettier"
+  },
+  "homepage": "https://github.com/shishikami/Unprettier/blob/main/README.md"
 }

@@ -155,12 +155,13 @@ export function transform(input, {force, output}){
     if(!regExp.test(firstLine)){
       firstLine = distortIndentationRandomly(firstLine);
     }
-    uglifiedCode = [firstLine, ...rest].map((e)=>{
+    uglifiedCode = rest.map((e)=>{
       let v = distortIndentationRandomly(e);
       return v;
     }).filter((e)=>{
       return e !== undefined;
     })
+    uglifiedCode = [firstLine, ...uglifiedCode];
   }
 
   uglifiedCode = uglifiedCode.join('\n');
