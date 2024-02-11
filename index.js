@@ -3,6 +3,7 @@
 import { showCommands } from "./utils/commands.js";
 import { processInputData } from "./utils/fileProcessor.js";
 import { transform } from "./ast/js/parser.js";
+import { commonFileTransform } from "./ast/commonFileTransform.js";
 
 let argv;
 try{
@@ -12,8 +13,12 @@ try{
   const input = processInputData(argv);
   // 分类解析
   switch(input.suffix){
+    case '.ts':
     case '.js':
       transform(input.data, argv);
+      break;
+    case undefined:
+      commonFileTransform(input.data, argv);
       break;
   }
 }catch(e){

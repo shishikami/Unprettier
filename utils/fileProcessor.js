@@ -18,25 +18,17 @@ const getExtname = (path) =>{
 }
 
 // Get source code
-const fetchSourceCode = path =>{
+const processInputData = ({input: path}) =>{
   const extname = getExtname(path);
+  const data = fileReader(path);
+  let suffix = undefined;
   if(acceptSuffix.includes(extname)){
-    const data = fileReader(path);
-    return {
-      data,
-      suffix: extname
-    }
-  }else{
-    throw new Error('Unsupported File Type');
+    suffix = extname;
   }
-}
-
-const processInputData = argv =>{
-  // INFO Not exactly what I expected
-  // if(argv.command !== 'uglier'){
-  //   throw new Error('Wrong command');
-  // }
-  return fetchSourceCode(argv.input);
+  return {
+    data,
+    suffix
+  }
 }
 
 export {

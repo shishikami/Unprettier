@@ -164,7 +164,7 @@ export function transform(input, {force, output}){
     uglifiedCode = [firstLine, ...uglifiedCode];
   }
 
-  uglifiedCode = uglifiedCode.join('\n');
+  uglifiedCode = uglifiedCode.join('\r\n');
 
   let flag = force ? 'w' : 'wx';
   fileWriter(output, uglifiedCode, flag);

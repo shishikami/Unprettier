@@ -1,5 +1,5 @@
 // accepted file extname
-const acceptSuffix = ['.js'];
+const acceptSuffix = ['.js','.ts'];
 
 export {
   acceptSuffix,

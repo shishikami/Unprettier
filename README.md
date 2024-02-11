@@ -26,7 +26,9 @@ With this tool, you may expect the following:
 ![Before and After](./public/effect.png)
 
 ### Notes
-Unprettier **only support js files** currently. The support for other languages will be available in the future (probably)
+Currently, Unprettier only has full support for javascript files. The full support for other languages will be available in the future (probably).
+
+Only random indentations will be implemented for other file.
 
 ### Installation
 To install Unprettier, follow these steps:
