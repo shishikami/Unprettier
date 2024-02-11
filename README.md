@@ -16,6 +16,9 @@ I built this program after referring to another project([Shittier](https://githu
 
 Unprettier is a code formatting tool that provides terrible code formatting. It cound generate awful code that is unreadable, incomprehensible and illogical. 
 
+> [!NOTE]
+> Currently, Unprettier only has full support for javascript files, see [Notes](#notes)
+
 With this tool, you may expect the following:
 - Mixed case for each identifier (scope-based).
 - Random indentation for each line.
@@ -28,7 +31,8 @@ With this tool, you may expect the following:
 ### Notes
 Currently, Unprettier only has full support for javascript files. The full support for other languages will be available in the future (probably).
 
-Only random indentations will be implemented for other file.
+- TypeScript file are also fully supported, **but it is experimentally**
+- For other files, only random indentations are implemented.
 
 ### Installation
 To install Unprettier, follow these steps:
