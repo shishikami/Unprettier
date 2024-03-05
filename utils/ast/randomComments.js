@@ -55,18 +55,19 @@ const choiceComments = commentsConfigGenerator(__dirname + '/../source/choiceCom
  * @param {string} type 
  * @returns string | undefined
  */
-export default function generateCommentsRandomly(type){
+export default function generateCommentsRandomly(type, factor){
+  // TODO factor应用 添加缓存
   switch(type){
     case 'VariableDeclaration':
-      return commentsGenerator(variableDeclarationComments);
+      return commentsGenerator(variableDeclarationComments, factor);
     case 'FunctionDeclaration':
-      return commentsGenerator(functionDeclarationComments);
+      return commentsGenerator(functionDeclarationComments, factor);
     case 'Loop':
-      return commentsGenerator(loopComments);
+      return commentsGenerator(loopComments, factor);
     case 'ExpressionStatement':
-      return commentsGenerator(expressionStatementComments);
+      return commentsGenerator(expressionStatementComments, factor);
     case 'Choice':
-      return commentsGenerator(choiceComments);
+      return commentsGenerator(choiceComments, factor);
     default:
       errorThrower.internalError('Unsupported node type in randomComment.js');
   }
